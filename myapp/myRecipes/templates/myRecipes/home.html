@@ -1,0 +1,36 @@
+<!-- extended to the base.html template -->
+{% extends "myRecipes/base.html" %}
+
+{% block content %}
+<style>
+	/*The style for the body, h1, h2, h3, h4, h5, and h6*/
+	body, h2{background: lavender; color: saddlebrown; font-family: "Courier", serif; font-weight: bold; text-align: center;}
+	h1{color: mediumvioletred; font-family: "Courier", serif ; font-size: 150pt;}
+	h3{color: saddlebrown; font-family: "Courier", serif; font-size: 14pt; font-weight: bold;}
+</style>
+	<!-- The body which what will display on the YaMoo homepage -->
+	<div class="image">
+		<!-- Adding an image and gif logo from the link source-->
+		<img src="https://www.bbcgoodfood.com/sites/default/files/editor_files/2018/08/barbecued-meats.jpg" height="500" width="1100">
+		<h1><img src="http://bestanimations.com/Animals/Mammals/Bulls&Cows/cute-cartoon-cow-animation-1.gif" height="100" width="120"><b>YaMoo</b><img src="http://bestanimations.com/Animals/Mammals/Bulls&Cows/cute-cartoon-cow-animation-1.gif" height="100" width="120"></h1>
+	</div>
+	<!-- Creating a search bar-->
+	<div class="searchbar">
+		<!-- Title -->
+		<h2>Search by Ingredients</h2>
+		<!-- If the user type ingredients in serach here bar, it will then display the recipe puppy url -->
+		<form action="http://www.recipepuppy.com/" method="get" style="font-size:10px;">
+			<b style="font-size:14px;"></b>
+			<input type="text" name="i" id="i" value="Enter ingredients" size=31 style="color:gray;font-size:11px;" 
+			onfocus="if(this.style.color=='gray'){this.style.color='black';this.value='';}" 
+			onblur="if(this.value==''){this.style.color='gray';this.value='Enter ingredients separated by commas';}"/>
+			<input type="submit" value="Search" style="font-size:11px;" />
+			<br/>Powered by <a href="http://www.recipepuppy.com" style="font-size:10px;">Recipe Puppy</a></form>
+		<h2>YaMoo is an ingredient based recipe search engine.</h2>
+		<h2>Enter your ingredients above to find your favorite recipes.</h2>
+
+		<h3><br/>Clik the link below to show our favorite recipe collections.</h3>
+		<h3><img src="http://bestanimations.com/Animals/Mammals/Bulls&Cows/cute-cartoon-cow-animation-1.gif" height="70" width="90"><a href="{% url 'YaMoo-recipes' %}">YaMoo Recipes</a><img src="http://bestanimations.com/Animals/Mammals/Bulls&Cows/cute-cartoon-cow-animation-1.gif" height="70" width="90"></h3>
+	</div>
+
+{% endblock content %}

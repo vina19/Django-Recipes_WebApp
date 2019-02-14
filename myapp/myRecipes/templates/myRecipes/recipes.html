@@ -1,0 +1,46 @@
+<!-- extended to the base.html template -->
+{% extends "myRecipes/base.html" %}
+
+{% block content %}
+<style>
+	/*The style for the body, h1, h2, h3, h4, h5, and h6*/
+	body{background: lavender; color: saddlebrown; font-family: "Courier", serif; font-weight: bold;  text-align: left;}
+	h3{color: mediumvioletred; font-family: "Courier", serif ; font-size: 60pt; font-weight: bold; text-decoration: underline;}
+	h5{color: saddlebrown; font-family: "Courier", serif; font-weight: bold; font-size: 15pt; text-align: left;}
+	h6{color: saddlebrown; font-family: "Courier", serif; font-weight: bold; font-size: 20pt; text-align: left; text-decoration: underline; line-height: 50px;}
+</style>
+	<!--Adding logo gif to the title of the page-->
+	<div class="Title">
+		<h3><a href="{% url 'YaMoo-home' %}"><img src="http://bestanimations.com/Animals/Mammals/Bulls&Cows/cute-cartoon-cow-animation-1.gif" height="70" width="90"></a><b>YaMoo Recipes</b><a href="{% url 'YaMoo-home' %}"><img src="http://bestanimations.com/Animals/Mammals/Bulls&Cows/cute-cartoon-cow-animation-1.gif" height="70" width="90"></a></h3>
+	</div>
+
+	<form action="{% url 'get_recipe' %}">
+		What are you looking for? <input name="name" type="text">
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+
+	<div class="YaMooRecipes">
+		<!-- Display on the chicken recipes page after the user search chicken-->
+		<h5>*Click the picture to see the recipe.</h5>
+		<!-- Create clickable image of the recipes and the reference link to it. -->
+		<h6><img src="https://i218.photobucket.com/albums/cc281/1qbe5t4rnes/Cute%20Gif/Cow.gif" height="35" width="40">Chicken and cashew nut stir-fry</h6>
+		<a href="http://www.bbc.co.uk/food/recipes/chickenandcashewnuts_89299"><img src="http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg" height="210" width="300"></a>
+
+		<h6><img src="https://i218.photobucket.com/albums/cc281/1qbe5t4rnes/Cute%20Gif/Cow.gif" height="35" width="40">Spicy Arrabiata Penne</h6>
+		<a href="https://www.foodnetwork.com/recipes/valerie-bertinelli/spicy-arrabiata-penne-3106836?text=pasta&submit=Search"><img src="https:\/\/www.themealdb.com\/images\/media\/meals\/ustsqw1468250014.jpg" height="240" width="230"></a>
+
+		<h6><img src="https://i218.photobucket.com/albums/cc281/1qbe5t4rnes/Cute%20Gif/Cow.gif" height="35" width="40">Honey-Teriyaki Salmon and Asparagus Veggie Rice Bowls</h6>
+		<a href="https://www.skinnytaste.com/honey-teriyaki-salmon-with-cauliflower-rice/#HmSbbjPvvBvQlC5S.99"><img src="https:\/\/www.themealdb.com\/images\/media\/meals\/xxyupu1468262513.jpg" height="240" width="230"></a>
+
+		<h6><img src="https://i218.photobucket.com/albums/cc281/1qbe5t4rnes/Cute%20Gif/Cow.gif" height="35" width="40">Laksa King Prawn Noodles</h6>
+		<a href="https://www.taste.com.au/recipes/king-prawn-laksa/cc774b52-6938-4697-bd1b-1458438c2212"><img src="https:\/\/www.themealdb.com\/images\/media\/meals\/rvypwy1503069308.jpg" height="240" width="230"></a>
+
+		<h6><img src="https://i218.photobucket.com/albums/cc281/1qbe5t4rnes/Cute%20Gif/Cow.gif" height="35" width="40">Rocky Road Fudge</h6>
+		<a href="https://www.verybestbaking.com/recipes/18459/super-easy-rocky-road-fudge/"><img src="https:\/\/www.themealdb.com\/images\/media\/meals\/vtxyxv1483567157.jpg" height="240" width="230"></a>
+
+		<h6><img src="https://i218.photobucket.com/albums/cc281/1qbe5t4rnes/Cute%20Gif/Cow.gif" height="35" width="40">Budino Di Ricotta</h6>
+		<a href="https://www.italymagazine.com/recipe/budino-di-ricotta-ricotta-pudding"><img src="https:\/\/www.themealdb.com\/images\/media\/meals\/1549542877.jpg" height="240" width="230"></a>
+	</div>
+
+{% endblock content %}
